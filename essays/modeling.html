@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Modeling</title>
+<!-- 2016-09-12 Mon 07:29 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Michael Gummelt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Modeling</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#unnumbered-1">Intro</a></li>
+<li><a href="#unnumbered-2">Exisiting models</a>
+<ul>
+<li><a href="#unnumbered-3">Irreducibility</a></li>
+</ul>
+</li>
+<li><a href="#unnumbered-4">Model theory</a></li>
+<li><a href="#unnumbered-5">Benefits</a>
+<ul>
+<li><a href="#unnumbered-6">Logic vs. Math</a></li>
+<li><a href="#unnumbered-7">Logic vs. Programming</a>
+<ul>
+<li><a href="#unnumbered-8">History</a></li>
+<li><a href="#unnumbered-9">Benefits of Logic</a></li>
+<li><a href="#unnumbered-13">Limits of Logic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#unnumbered-14">Conclusion</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Intro</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+I spent just about all of junior year studying Japanese.  It consumed
+all my spare time.  I read, wrote, listened, spoke, and hoped it would
+seep in.  I unfortunately didn't follow through with the language
+after returning from my time broad, but after studying language and
+language acquisition, I found that the most lasting effect was on how
+I approached other subjects.
+</p>
+
+<p>
+I had spent so long thinking about language that I started to view all
+my classes through that lens.  I thought any field could be distilled
+down to the things ("vocab") and the relations between those things
+("grammar").  Here's a snippet from nutrition:
+</p>
+
+<p>
+<b>vocab</b>
+</p>
+<ul class="org-ul">
+<li>cholesterol</li>
+<li>lipoproteins</li>
+<li>HDL</li>
+<li>LDL</li>
+</ul>
+
+<p>
+<b>grammar</b>
+</p>
+<ul class="org-ul">
+<li>The body makes all the cholesterol it needs</li>
+<li>Cholesterol travels in the blood via lipoproteins</li>
+<li>HDL is "good" cholesterol</li>
+<li>LDL is "bad" cholesterol</li>
+</ul>
+
+<p>
+This metaphor is rough, granted, and the representation is a bit
+hokey, but it out to fit disparate fields quite well.  Its most useful
+effect was providing a sort of normal form for my notes and thoughts.
+Somewhat like a mathemetician will try to reduce a new problem to an
+existing one in order to use known techniques, I would reduce any new
+field to the vocab/grammar system.  Connection "vocab" to "grammar" It
+forced me to acknowledge what new "things" the field introduced, and
+whether I truly understood what those thing were rather than merely
+learning what they're called.  It was a useful cognitive tool, but I
+was never quite secure in this system as a common denominator.  The
+metaphor seemed contrived.  I wanted a more rigorous, complete
+universal modeling tool.
+</p>
+
+<p>
+That's what I was doing after all - modeling.  To think, to take
+notes, to make scientific sense of some otherwise nebulous system is
+to model.  We can't mentally reconstruct systems in full fidelity, so
+we simplify by making representations.  That's what models are.
+Representations.
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-2" class="outline-2">
+<h2 id="unnumbered-2">Exisiting models</h2>
+<div class="outline-text-2" id="text-unnumbered-2">
+<p>
+Any modeling system has two parts: the object and the model.  The
+model represents the object.  It says true things about the object.
+The most tangible example is a visual model, like a painting.  If
+aiming for realism, the painter tries to represent on canvas with
+maximal accuracy some scene, like a mountain skyline <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>.  The skyline
+is the object.  The painting is the model.
+</p>
+
+<p>
+What makes a painting realistic?  One is how few mistakes it makes.
+If the grass is painted yellow, but is in reality green, that's a
+mistake.  But it's easy to not make any mistakes; Just don't paint
+anything!  So another criteria is how much of the scene the painting
+attempts to depict.  A painting which includes the entire visible
+mountain range, the river valleys, the foreground grassy meadow, is
+more realistic than one showing just a single ridge.
+</p>
+
+<p>
+The property of making few mistakes in a model is known as
+<b>precision</b>, and a model that makes no mistakes is said to be <b>sound</b>.
+How much of the object is represeted by the model is called <b>recall</b>,
+and a model with 100% recall is called <b>complete</b> <sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>.  A
+photo-realistic painting of the entire scene would be both sound and
+complete.  Precision and recall are terms born out of machine
+learning, specifically classifiers, but are useful criteria for
+assessing the quality of any model <sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup>.
+</p>
+
+<p>
+A visual model of a physical object like a painting is the easiest to
+understand, but there exist models more abstract.  One is what you're
+reading right now &#x2013; natural language, or prose.  The same sorts of
+criteria apply.  An essay making no mistakes would be sound, and one
+that leaves no true statement unstated would be complete.  In fact,
+precision and recall are probably the two most important features of
+an essay.  A good one must be both correct and insightful.  Another
+type of model is the semi-formal language used by lawyers or
+scientists, where the goal is complete unambiguity, but for efficiency
+and consummability, is still written in natural language.  The most
+formal are the languages used by mathemeticians and programmers &#x2013;
+first-order logic, code, linear models, etc.
+</p>
+</div>
+
+<div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3">Irreducibility</h3>
+<div class="outline-text-3" id="text-unnumbered-3">
+<p>
+Another, more nebulous property of models is communicability.  How
+efficiently does it communicate truth to the viewer/reader/consumer?
+The painting is quite efficient.  I could describe the mountain range
+in prose just as correctly as I could the painting: "The easternmost
+mountain in the range stands in the foreground, in front of the larger
+mountain to the west.  It's eastern edge rises with a 28 degree&#x2026;",
+but certainly much less efficiently.  In fact, I could probably
+describe it with <i>equal</i> precision and recall by reducing the painting
+down to pixels, then listing off the pixels: "Pixel 0,0 has color
+#2f5d44&#x2026;", which is so inefficient it's absurd, but I would retain
+truth.
+</p>
+
+<p>
+It's worth asking which models are "reducible" in this sense.  Model A
+can be said to <b>reduce</b> to model B if I can express the same truths in
+B as in A, regardless of efficiency of communication.  If A reduces to
+B, but not B to A, B is more <b>powerful</b> than A.  Paintings reduce to
+prose, but not vice versa.  I couldn't express this essay as a
+painting <sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>.
+</p>
+
+<p>
+A model to which all others are reducible would be quite useful
+indeed.  It would be the universal tool I was hoping for when adopting
+the vocab/grammar system.  A tool for representation that, while
+possibly not always the most efficient or appropriate, would always be
+just as powerful as the alternatives, and to which the modeler could
+reliably turn to.  Physicists so hope for this kind of white whale
+that they've dubbed it the "Theory of Everything".
+</p>
+
+<p>
+As I'll elaborate in the next section, formal logic may be such a
+tool.  This suggestion isn't particularly novel, since formal logic is
+almost by definition a universal modeling tool, but what is
+interesting is how familar domains map to algegraic structures, the
+objects of formal logic, and how other modeling tools like math and
+programming reduce to logic.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-4" class="outline-2">
+<h2 id="unnumbered-4">Model theory</h2>
+<div class="outline-text-2" id="text-unnumbered-4">
+<p>
+One of the senior year classes I was applying the vocab/grammar model
+to happened to be Phil 152: Computability and Logic, exploring the
+connection between logic and computation.  What it really covered was
+Model Theory.  The name alone piqued my interest, since I had been
+thinking about a sort of theory of models, and Model theory turned out
+to be just that, but almost incidentally &#x2013; the "model" in Model
+Theory and the "model" used colloquially (and hitherto in this essay)
+are related, but have nearly opposite meanings <sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>.
+</p>
+
+<p>
+Model theory is math at its most abstract.  It's the study of not just
+numbers, but any abstract structure (i.e object), along with its
+relationship to the logic (i.e. model) used to describe that
+structure.
+</p>
+
+<p>
+A <b>structure</b>, informally, means things and the relations between
+those things (sound familiar?).  Formally, it's a set of values along
+with functions defined on that set <sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>.  It turns out, potentially
+unsurprisingly, that this tool is abstract enough to represent lots of
+systems (all structures other than Number Theory are presented in part):
+</p>
+
+<p>
+<b>Number Theory</b>: \(\{N;0,S,+,*,<\}\) <br  />
+<b>Calculus</b>: \(\{\mathrm{Fn, Var, R; lim}\}\). <br  />
+<b>Economics</b>: \(\{\mathrm{Product; supply, demand, price}\}\) <br  />
+<b>Evolutionary Biology</b>: \(\{\mathrm{Chromose, Gene; fecundity, genes, phenotype}\}\).
+</p>
+
+<p>
+Beyond these formal fields of studies, models of specific phenomenon
+are made with reference to structures.  Granovetter's model, which
+assigns tipping points to individuals and is often used to represent
+social phenomenon like riots and product adoption, has a structure of
+\(\{\mathrm{Person, N, Boolean; tippingPoint, tipped}\}\).
+</p>
+
+<p>
+Once we've established a structure, we get to the useful part of
+saying something about it.  The whole point of Granovetter's model,
+for instance, is to predict when an individual will tip <sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>:
+</p>
+
+\begin{array}{llr}
+\mathrm{tippingPoint} \colon \mathrm{Person} \rightarrow N \\
+\mathrm{tipped} \colon \mathrm{Person} \rightarrow \mathrm{Boolean} \\
+\mathrm{tipped} \colon (\mathrm{Person}, N) \rightarrow \mathrm{Boolean} \\
+
+\mathrm{tipped(p, n)} \leftrightarrow n \gt \mathrm{tippingPoint(p)} \\
+\mathrm{tipped(p)} \leftrightarrow \mathrm{people.filter(tipped(\_,tippingPoint(p)-1)).count() \gt tipping-point(p)} \\
+\end{array}
+
+<p>
+Statements like the above are made in the language of <b>first-order
+logic</b>.  FoL, like any logic, provides two things: a language to
+express truth, and derivation rules to deduce new truths.  I'll assume
+you have some familiarity with FoL and won't review it here.
+</p>
+
+<p>
+Statements presented without proof are called <b>axioms</b>, and are part
+of a broader class of statements known as <b>theorems</b>, which also
+include those which can be derived from the axioms using derivation
+rules such as modus ponens.  The set of all theorems derivable from an
+assumed set of axioms is called a <b>theory</b>.  Number Theory starts with
+the Peano Axioms (or some similar axiomatic set).  Economics starts
+the same (it uses math and is therefore a superstructure of same), and
+includes assumptions we make about human behavior, such as rationality
+(utility-seeking) and the laws of supply and demand.
+</p>
+
+<p>
+FoL provides something close to the Theory of Everything described
+above.  Lots of models can be reduced to FoL.  As I'll describe in
+detail below, other formal systems like math and programming can be
+reduced to FoL.  FoL itself can be reduced to second-order logic, but
+not vice versa, so perhaps second-order logic is our most powerful
+model, but I'll mostly talk about FoL, since I seldom find I need the
+power of second-order.
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-5" class="outline-2">
+<h2 id="unnumbered-5">Benefits</h2>
+<div class="outline-text-2" id="text-unnumbered-5">
+</div><div id="outline-container-unnumbered-6" class="outline-3">
+<h3 id="unnumbered-6">Logic vs. Math</h3>
+<div class="outline-text-3" id="text-unnumbered-6">
+<p>
+Different sources will yield different definitions, but to me, math is
+the logic of numbers, which makes math a subset of logic.  Logical
+domains can generally be any <b>algebraic structure</b>, but numbers are so
+often relevant in non-numeric domains (e.g.  graphs, products,
+humans), that we often include them as a substructure when modeling
+non-numeric domains.
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-7" class="outline-3">
+<h3 id="unnumbered-7">Logic vs. Programming</h3>
+<div class="outline-text-3" id="text-unnumbered-7">
+<p>
+Programming and logic are deeply related.  Programmers build up a
+<b>domain</b> through data type definitions, define a <b>structure</b> on that
+domain by introducing functions, and make <b>statements</b> about that
+structure by defining those functions.
+</p>
+
+<p>
+On first noticing these similarites, I was quick to think of
+programming as a sort of universal modeling tool.  But this is wrong.
+Logic is more powerful.  Programming consists of defining computable
+functions, but there is a much wider set of true statements to be made
+of a domain beyond function definition.  So logic does not reduce to
+programming, but as I'll soon show, programming does in fact reduce to
+logic.  To understand this, you must first see how their basic
+connection, which requies understanding a bit of history.
+</p>
+</div>
+
+<div id="outline-container-unnumbered-8" class="outline-4">
+<h4 id="unnumbered-8">History</h4>
+<div class="outline-text-4" id="text-unnumbered-8">
+<p>
+In 1931, Kurt Godel proved number theory is not axiomitizable.  A more
+standard, and granted more inspiring, rephrasing is: "for any
+axiomitizable theory that includes arithmetic, there exists a true
+statement that can't be proven in that theory".  Colloquially, this
+means we can't fully describe mathematics.  No matter which set of
+axioms we write down, we will, in some sense, have missed something.
+</p>
+
+<p>
+Godel showed that no axiomatizable theory was complete, yet there
+remained the open question of whether we could somehow automatically
+determine whether a given statement did exist in a particulary theory
+(provable from the axioms).  This is called the Entsheidungsproblem,
+and it was answered (somewhat) independently by Church and Turing.
+</p>
+
+<p>
+In his 1936 paper, Turing invented a machine which he postulated could
+carry out any "effective", or algorithmic, procedure.  In the same
+paper, he showed how Turing Machines are reducible to FoL.  For any
+Turing Machine, or equivalently any computable function \(f(x)\), there
+is a first-order formula \(\phi(x, y)\) defining that function.  This means
+the formula has two free variables, \(x\) and \(y\), and is true only when
+\(f(x) = y\):
+</p>
+
+<p>
+\[ f(x) = y \Rightarrow N \models \phi(x, y) \]
+</p>
+
+<p>
+Further, the computable functions were proven (assuming Church's
+Thesis) to be equivalent to the recursive functions, or the functions
+representable by a statement provable from the Peano Axioms:
+</p>
+
+<p>
+\[ f(x) = y \Rightarrow PA \vdash \phi(x, y) \]
+</p>
+
+<p>
+Since \(PA\) is countable, the theory of \(PA\) is enumerable, meaning to
+compute \(f(x)\), we can enumerate theorems of PA until we arrive at
+\(\phi(x, y)\) or \(\neg \phi(x, y)\), or we loop forever.  *This fact is
+paramount to understanding the deep relation between logic and
+programming.* It shows that logic has its own implicit notion of
+computation.  \(PA\), along with the logical axioms and modus ponens, is
+the "computer", and \(\phi\) is the "program".  Derivation and
+computation are two perspectives on the same beast: finite state
+machines.
+</p>
+
+<p>
+In a traditional programming model, such as a register machine for
+example, a state is the list of integers occupying the registers at
+any given computational step.  The state transitions are given by the
+semantics of the machine.  In FoL, the states are <b>proofs</b>, or finite
+sequences of theorems beginning with the axioms, and the transitions
+are given by modus ponens.
+</p>
+
+<p>
+There is, however, a fundamental difference between computation and
+derivation, though it's one of degree, not of kind, and it arises from
+the difference in state transitions.  A computational model such as a
+register machine defines a single transition from each state; Logical
+derivations are instead nondeterministic, and branch out into multiple
+states.  Any pair of theorems in the proof (current state) can
+theoretically be combined via modus ponens to produce the next state.
+The computational history is therefore best thought of as a tree
+rather than a list.  So while logic "computes" via state machines just
+as programming, it's much less efficient than a purposefully written
+program, because the state transitions are less directed.
+</p>
+
+<p>
+<b>So programming is reducible to logic, since any computable function
+\(f(x)\) has an equivalent statement \(\phi(x, y)\) which represents it.</b> The
+computational model provided by programming is merely an
+optimization <sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-9" class="outline-4">
+<h4 id="unnumbered-9">Benefits of Logic</h4>
+<div class="outline-text-4" id="text-unnumbered-9">
+<p>
+So logic is more powerful than programming, but to what end?  What's
+are the benefits of logic?
+</p>
+</div>
+
+<ul class="org-ul"><li><a id="unnumbered-10"></a><b>Declarative Programming</b><br  /><div class="outline-text-5" id="text-unnumbered-10">
+<p>
+The first interesting benefit isn't actually one of power, but of
+convenience.  It can be much simpler to define a function with a
+logical formula rather than an imperative program.  This is often
+called "declarative programming", and Prolog is the most notable
+Turing Complete example of such a system.
+</p>
+
+<p>
+To define a function, rather than describe how to compute the function
+in a program, it can be much simpler to describe the relationship
+between the input and the output as a logical statement.  Consider the
+"naive" example put forth <a href="http://kti.ms.mff.cuni.cz/~bartak/prolog/sorting.html">here</a>:
+</p>
+
+<p>
+It's much easier to describe precisely what a sorted list <b>is</b> than to
+generate one.
+</p>
+</div></li>
+
+<li><a id="unnumbered-11"></a><b>Non-function Statements</b><br  /><div class="outline-text-5" id="text-unnumbered-11">
+<p>
+This is actually a difference in power.  As stated above, programming
+means defining functions.  But, as stated above, function definitions
+are not the only true statements we can make about a structure.
+Price, supply, demand, etc. are all quite interesting functions we can
+define when <a href="https://github.com/mgummelt/economics/blob/master/src/main/scala/Product.scala#L54">modeling economics</a>, but there are other interesting
+economic truths.  For example, that supply and demand are
+non-decreasing and non-increasing, respectively:
+</p>
+
+\begin{align}
+\mathrm{price2} & \gt \mathrm{price1} \rightarrow \mathrm{demand}(\mathrm{product}, \mathrm{price2}) \leq \mathrm{demand}(\mathrm{product}, \mathrm{price1}) \\
+\mathrm{price2} & \gt \mathrm{price1} \rightarrow \mathrm{supply}(\mathrm{product}, \mathrm{price2}) \geq \mathrm{supply}(\mathrm{product}, \mathrm{price1})
+\end{align}
+</div></li>
+
+<li><a id="unnumbered-12"></a><b>Uncomputable Functions</b><br  /><div class="outline-text-5" id="text-unnumbered-12">
+<p>
+The final advantage logic has over programming is also one of
+expressiveness, or power, but is of such limited practical consequence
+that I'll only describe it briefly.  I've been saying that programming
+is about defining <b>computable</b> functions.  This qualifier is actually
+meaningful.  Whether it be C++, Haskell, Turing Machines, or Register
+Machines, all Turing Complete computational models have the same
+expressive power: defining the computable functions.
+</p>
+
+<p>
+But not all functions are computable.  The most famous example is the
+halting problem.  There is no computable function that, given another
+function and its input, will determine if it halts.  We can, however,
+define this in logic:
+</p>
+
+<p>
+\[ \exists step \ U(f, x, \mathrm{step}) \]
+</p>
+
+<p>
+Here, \(U\) is the "universal" function, which runs \(f\) up to
+\(\mathrm{step}\) times, and evaluates to true if \(f\) halts.
+</p>
+
+<p>
+Saying that this function can't be defined in code (programming) is a
+bit of a technicality, though.  We could translate the above statement
+into a similar computable function where the existential quantifier is
+replaced by a loop.  It would halt for exactly those functions who
+themselves halt.  But in this case, we wouldn't have technicaly
+defined the halting function, which is a total function, but we would
+have defined the partial function which is only defined on those
+inputs that halt.
+</p>
+</div></li></ul>
+</div>
+
+<div id="outline-container-unnumbered-13" class="outline-4">
+<h4 id="unnumbered-13">Limits of Logic</h4>
+<div class="outline-text-4" id="text-unnumbered-13">
+<p>
+While formal logic might be the model most powerful, it isn't
+endlessly so.  Logic itself isn't fully expressive.  The functions
+definable in logic are called "arithmetical", but there do exist
+non-arithmetical functions.  For example, Tarski showed in 1933 that
+the set of formulas true in number theory is non-arithmetical.  We
+just can't write down what it means for a formula to be true in number
+theory, no matter the particular modeling tool.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-14" class="outline-2">
+<h2 id="unnumbered-14">Conclusion</h2>
+<div class="outline-text-2" id="text-unnumbered-14">
+<p>
+Compared to all the above (semi-)rigor, the practical resolution I've
+arrived at to solve my initial problem of finding a universal modeling
+tool may seem a bit simplistic, but is nonetheless something I use
+daily when learning new things.  With varying levels of formality, it
+goes something like this:
+</p>
+
+<ol class="org-ol">
+<li>Establish the domain: What are the objects?</li>
+
+<li>Establish the functions: What are the properties of the objects?</li>
+
+<li>Establish the theory: Define the functions.  State properties of
+the functions.</li>
+</ol>
+
+<p>
+This process isn't linear, of course.  The steps are interwoven.  And
+as stated above, the resulting model (logical) varies in formality,
+depending on the model.  For a pair of contrasting examples, <a href="https://github.com/mgummelt/economics">here</a> is a
+formal model I wrote when studying economics, and <a href="./dilemma.html">here</a> is the informal
+one I made when taking notes on <i>The Innovator's Dilemma</i>.  Economic
+theory is essentially mathematical, so my model largely consists of a
+catalogue of the same function definitions and formal statements I
+found in books.  But I did use a programming language (Scala) rather
+than a built-for-math markup like LaTeX.  Function definition is more
+natural in a programming language, whereas math markup is more
+suitable for proofs and non-function logical statements.  Both are
+useful for Economics, but I ultimately went with a programming
+language, coupled with logical statements written in comments and
+pseudocode.
+</p>
+
+<p>
+<i>The Innovator's Dilemma</i>, being prose, is of course more amenable to
+a natural rather than formal language.  But notice that the
+structure still maintains that of logic (domain, functions, theory)
+outlined above.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+Most paintings don't aim for realism alone, granted.  They're
+trying to evoke an idea or an emotion.  Not everything is a model.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+<br  />
+presision = (true claims) / claims <br  />
+recall = (true claims) / truths
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+They aren't the only criteria.  Approximate accuracy (statements
+technically wrong, but close to the truth), efficient communicability,
+simplicity, etc. can each be relevant to particular models, but
+precision and recall are general to all.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+Notwithstanding painting the words themselves, thus defeating the
+point.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+The term "model" in model theory actually refers to the object
+(the alebraic structure), rather than the thing doing the describing.
+The SEP has a great section on the etymology of this name collision:
+<a href="http://plato.stanford.edu/entries/model-theory/#Modelling">http://plato.stanford.edu/entries/model-theory/#Modelling</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <p class="footpara">
+It's in fact the functions <i>and relations</i> defined on the set, but
+functions and relations are mutually reducible if you allow for
+multi-sorted domains.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <p class="footpara">
+Liberties are taken with the notation here, as pure FoL can be
+tedious.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <p class="footpara">
+This is admittedly a flagrant abuse of the word "merely".
+</p></div>
+
+
+</div>
+</div></div>
+</body>
+</html>
