@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Demand Discovery</title>
+<!-- 2017-06-07 Wed 22:34 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Michael Gummelt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Demand Discovery</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Introduction</a></li>
+<li><a href="#sec-2">Demand</a></li>
+<li><a href="#sec-3">Discovery</a></li>
+<li><a href="#sec-4">Conclusion</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+A <a href="./opportunity.html">product opportunity</a> arises when demand is higher than cost.  So to
+validate a new product, you must compute both its demand and its cost.
+This essay covers demand.
+</p>
+
+<p>
+I'll assume you have a product for which you're assessing demand,
+rather than trying to figure out what to build.  I'll further assume
+you're selling to a business <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>.  How do you compute demand for such
+a product?
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Demand</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">demand = \(\Delta\) profit - switchingCost</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The demand a customer has for a product is the amount they're willing
+to pay for it.  The amount they're willing to pay is the increase in
+company value the product will bring, minus switching costs:
+</p>
+
+<p>
+\(\mathrm{demand}(c, p)\): The amount customer \(c\) is willing to pay for product \(p\) <br  />
+\(\mathrm{value}(c)\): Value of customer \(c\)'s company <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup> <br  />
+\(\mathrm{value}(c_p)\): Value of customer \(c\)'s company after adopting \(p\) <br  />
+</p>
+
+\begin{equation}
+\mathrm{demand}(c, p) = \mathrm{value}(c_p) - \mathrm{value}(c) - \mathrm{switchingCost}(c, p)
+\end{equation}
+
+<p>
+Computing switching cost is important, but it's outside the scope of
+this essay.  I'll focus only on computing company value.
+</p>
+
+<p>
+There are many ways to measure a company's value.  I find the most
+useful to be Net Present Value, or NPV, which is the sum of all
+discounted future cash flows.  So value is proportional to future
+profits:
+</p>
+
+\begin{align}
+\mathrm{value}(c) & = \mathrm{profit}(c)\\
+\mathrm{demand}(c, p) & = \mathrm{profit}(c_p) - \mathrm{profit}(c) - \mathrm{switchingCost}(c, p)
+\end{align}
+
+<p>
+But computing \(\mathrm{profit}\) can be complex.  Ideally, we'd be
+able to derive an alternate formula for \(\mathrm{demand}\) only in
+terms of the local effects a product has on the company.  I'll present
+just such a formula below.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">company = program</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+To measure how much your product will increase your customer's profit,
+you must first understand how a company's profit is determined, in
+general.  Profit is defined, roughly, as <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>:
+</p>
+
+\begin{equation}
+\mathrm{profit} = \mathrm{quantity} \cdot (\mathrm{demand} - \mathrm{cost)}
+\end{equation}
+
+<p>
+Your customer's product is a major determinant in this formula.  A
+better product yields higher demand.  But product isn't everything.
+Quantity is influenced by marketing, sales, and manufacturing.  Cost
+is influenced by recruiting and procurement.  And to further
+complicate matters, a company's NPV depends on not just current
+profit, but <i>future</i> profit, which depends on future product
+iterations.
+</p>
+
+<p>
+Together, these departments form a company's <b>process</b>.  Generally
+speaking, a process is anything that converts <b>inputs</b> to <b>outputs</b>.
+A company's inputs are what economists call the <b>factors of
+production</b>.  They're the labor, products, and services purchased by
+the company.  The output is revenue, generated from product
+sales <sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>.
+</p>
+
+<p>
+The formal model for a process is a program.  Just like a computer
+program defines how a function's inputs determine its outputs, so does
+a company's process determine how its economic inputs generate
+revenue.  If we wanted, we could model how a company operates by
+writing a computer program.  To varying extents, human creativity also
+plays a role in company operations, of course, but much of high level
+company operations can be represented in code.
+</p>
+
+<p>
+In fact, each department can be viewed as a <b>subprocedure</b>, with its
+own inputs and outputs.  Recruiting turns recruiting software and
+events into employees.  Marketing turns campaigns into qualified
+leads.  Sales turns qualified leads into revenue.  While each
+department can be arbitrarily complex, the interfaces at which they
+meet and exchange deliverables tend to be quite simple, just like a
+well designed program.
+</p>
+
+<p>
+Your customer will integrate your product into their process, and the
+amount they're willing to pay is proportional to how it affects the
+output of this process, profit.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">product = subprocedure</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+If we zoom in further, we'll see that a company's process is comprised
+of two types of components: human and products.
+</p>
+
+<p>
+I, as an engineer (and human), provide several outputs to my employer,
+including design docs, help for my teammates, actions that shape
+culture, etc..  But my main output is software.  My inputs are my
+salary, and high level descriptions of my tasks, in the form of JIRAs,
+created by my project manager.  I bring quite a bit of creativity to
+this function, but at a high level, it can be fairly accurately
+modeled by code.  I respond to emails off a queue.  I respond to slack
+messages off a queue.  I respond to calendar interrupts telling me to
+go to meetings.  For each software task, I break it into subtasks,
+write the tests, write the implementation, test the code, document the
+feature (if necessary), and submit it for review.  Much of my job is
+mechanical.  If someone were to model my company as software, I would
+be an Actor, consuming and producing messages.
+</p>
+
+<p>
+Most, but not all, products also have inputs and outputs.  Simple ones
+don't.  A ball, a cup, or a desk are best modeled as data, not code.
+But more complex products have <b>affordances</b>, each of which have
+inputs and outputs.  This is obvious for software products, but it's
+also true for all but the simplest hardware products.  A camshaft
+turns the rotary motion of a timing chain into the longitudinal motion
+of poppet valves.  We could accurately model this function as code,
+where the "processor" is the laws of physics.
+</p>
+
+<p>
+Every employee and product produces intermediate values that
+ultimately combine in higher level functions of the company to produce
+revenue.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">demand</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+The value your product provides to your customer is the difference
+between the value of its outputs and the cost of its inputs:
+</p>
+
+\begin{equation}
+\mathrm{value}(p) = \mathrm{value}(\mathrm{outputs}) - \mathrm{cost}(\mathrm{inputs})
+\end{equation}
+
+<p>
+It's tempting to think that demand equals value, but it's not true.
+Remember from above:
+</p>
+
+\begin{equation}
+\mathrm{demand}(c, p) = \mathrm{value}(c_p) - \mathrm{value}(c) - \mathrm{switchingCost}(c, p)
+\end{equation}
+
+<p>
+This formula shows that, thanks to competition, demand for your
+product is proportional to the <b>increase</b> in value it brings over its
+nearest competitor, not its absolute value.  So, luckily for your
+customers and unluckily for you, demand for your product could be far
+less than the value it provides.
+</p>
+
+<p>
+So we were close to arriving at the simple demand formula we set out
+to derive, but it's not quite correct.  There is, however, a special
+case where demand equals a similar formula.  This occurs when your
+product's nearest competitor is a <b>direct competitor</b>.
+</p>
+
+<p>
+Direct competitors share the same sets of affordances.  They have the
+same inputs and outputs.  When modeled as software objects, direct
+competitors have the same <b>type</b>.  Having the same type means that
+your product is a drop-in replacement, so its effect on the company's
+profit reduces to its effect on the inputs and outputs of the
+competitor it's replacing.  Remember that demand is change in profit,
+which is equivalently change in revenue minus change in cost:
+</p>
+
+\begin{align}
+\mathrm{demand}(c, p) & = \Delta \mathrm{profit}(c, p) \\
+\mathrm{demand}(c, p) & = \Delta \mathrm{revenue}(c, p) - \Delta \mathrm{cost}(c, p)
+\end{align}
+
+<p>
+When replacing a direct competitor, change in revenue equals the
+change in value of the outputs, and change in cost equals the change
+in cost of the inputs:
+</p>
+
+\begin{equation}
+\mathrm{demand}(c, p) = \Delta \mathrm{value}(\mathrm{outputs}(c, p)) - \Delta \mathrm{cost}(\mathrm{inputs}(c, p))
+\end{equation}
+
+<p>
+An example of a drop-in replacement is a processor that implements the
+same instruction set as its competitor.  Its inputs are power and
+code, and its output is memory state corresponding to the execution of
+the code, after an amount of time proportional to the clock speed of
+the processor.  The differences in power and speed brought about by
+the new processor defines how much a customer is willing to pay for
+the processor. <sup><a id="fnr.5" name="fnr.5" class="footref" href="#fn.5">5</a></sup>
+</p>
+
+<p>
+So we've finally arrived at a simple, local formula for computing a
+product's demand, assuming the product is replacing a direct
+competitor.
+</p>
+
+<p>
+But not all competitors are direct.  Your product might not be a drop
+in replacement.  In general, integrating your product may require an
+arbitrary amount of change in your customer's process.  Any number of
+human processes might need to be reworked, new products adopted, or
+existing ones rewritten.  Since these functions, rather than any
+single product, must all be replaced, they are collectively your
+nearest competitor.
+</p>
+
+<p>
+Let's call their interface the <b>least common interface</b>, or LCI.  The
+LCI is shared by both competing processes, so it generalizes the
+"drop-in replacement" logic of direct competition.  Just as we did
+above for direct competition, we can measure increase and value, and
+therefore demand, just by looking at the change in the inputs and
+outputs to the LCI:
+</p>
+
+\begin{equation}
+\mathrm{demand}(c, p) = \Delta \mathrm{value}(\mathrm{outputs}(\mathrm{LCI}(c, p))) - \Delta \mathrm{cost}(\mathrm{inputs}(\mathrm{LCI}(c, p)))
+\end{equation}
+
+<p>
+This is the simple, local formula for demand we've been looking for,
+and it applies to any type of product, both direct and indirect
+competitors.
+</p>
+
+<p>
+As an illustrative example, consider <a href="https://www.fivetran.com">Fivetran</a>.  Fivetran extracts data
+from SaaS services into a relational database, so business analysts
+can query it to inform product, engineering, etc..  The input to
+Fivetran is SaaS data, which has no cost because it's not consumed.
+The output is a relational database.  This output didn't exist in the
+competing process, because Fivetran is not a drop-in replacement.  It
+does not produce a faster or more optimized SQL database than its
+nearest competitor.  Previously, business analysts likely used the UIs
+or builtin query languages of JIRA, Salesforce, Github, etc..
+</p>
+
+<p>
+To directly compare the value of the company before Fivetran and the
+value after, we must instead compare the LCI, which in this case is
+the data analysis performed by business analysts.  Modeled by code,
+it's a function that consumes labor and produces insights.  Despite
+the significant process reworking required to integrate Fivetran, this
+interface remains the same, so it's the one we must use to measure
+demand.  The demand for Fivetran is the increase in value of the
+insights, minus the increase in cost of the the labor.
+</p>
+
+<p>
+Quantifying the value of "insights", or many other types of outputs
+for that matter, can be complex.  It requires tracing the effect of
+the insight "object" through the company's process to measure its
+effect on revenue.  This is straightforward for simple values close to
+the sale, such as leads, but not for others.  Nonetheless, it's what
+you must compute, or at least estimate, to assess demand for your
+product.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Discovery</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+So now that you know precisely how demand is derived, how do you go
+about computing it?  There's not much that's interesting to say about
+this.  It should be clear that your customer's process is the most
+important thing to understand, and you learn about it through the
+familiar channels - talking to them, observing their work, shipping
+prototypes, and gathering feedback.
+</p>
+
+<p>
+No two company's processes are exactly the same, so it's important to
+perform this discovery with a sample of companies that collectively
+represent your entire market.
+</p>
+
+<p>
+And the above model does make some implicit assumptions that fail to
+hold in real life.  In reality, your customers don't have perfect
+information.  They don't know exactly how your product will perform.
+In fact, you probably don't either.  This brings uncertainty risk, for
+which your customers will understandably demand a discount.
+</p>
+
+<p>
+Another important exception arises from misaligned incentives within
+the company.  Economists call these <b>agency problems</b>.  For all but
+the smallest companies, the buyer is usually not optimizing for
+company profit.  They're optimizing for their compensation, status,
+and quality of life.  Rooting out these biases is necessary to
+determine true demand.
+</p>
+
+<p>
+Finally, while not technically an exception to the model, it's
+important to understand that switching costs are really opportunity
+costs.  This means that even if your product will increase profit,
+your customer still might not see any value in buying if they think
+they can invest their time elsewhere for a greater return.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Conclusion</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+A customer's demand for your product is the amount by which it
+increases their company's profit.  Any company's profit is determined
+by their process, which converts economic inputs into revenue.  Like
+any process, it can be modeled as code.
+</p>
+
+<p>
+Products can also be modeled as software, even when they're hardware.
+A customer will integrate your product into their process.  Demand is
+the amount by which it increases their profit.  Computing this delta
+reduces to computing the effect that integrating a new software
+component has on output of the larger program.
+</p>
+
+<p>
+If your product is replacing a direct competitor, demand equals the
+increase in value of its outputs, minus the increase in cost its
+inputs.  If it's replacing an indirect competitor, the same formula is
+used, but on the <b>least common interface</b>, which is the minimal set of
+company functions shared by both the existing process, and the new one
+which uses your product.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+Much of this essay applies to consumer products as well, but the
+utility function is not as simple.  Businesses optimize profit, while
+consumers optimize their emotional state, which is much more
+challening to compute.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+Strictly speaking, value(c) should instead be the value of company
+c after adopting the <b>nearest competitor</b> to product p.  But we'll
+assume that c is already using p's nearest competitor.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+Assumes one product per company.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+I'm assuming your customer sells a product, but, again, much of
+the same rules apply to other types of business models.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.5" name="fn.5" class="footnum" href="#fnr.5">5</a></sup> <p class="footpara">
+Many products can't be modeled by pure functions.  They have side
+effects.  The processor in this example is valued in part by its
+latency, a very important side effect.  Because of this, the notion of
+a product's "outputs" much be generalized to include these side
+effects, just as the notion of "type system" is generalized to a "type
+and effect system" in the static analysis of impure languages.
+</p></div>
+
+
+</div>
+</div></div>
+</body>
+</html>
