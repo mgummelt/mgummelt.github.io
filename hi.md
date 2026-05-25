@@ -7,7 +7,7 @@ permalink: /hi/
 > "Language was invented for one reason, boys—to woo women—and, in that
 > endeavor, laziness will not do."
 >
-> -- Mr. Keating, *Dead Poets Society*
+> -- Mr. Keating
 
 If a man intends to find the love of his life, he must be willing and
 able to write, at minimum, a five-paragraph essay. It demonstrates a
@@ -50,12 +50,13 @@ that I now get to parlay into to wall decor and feng shui.
 
 I ran that small startup for five years while living in San Francisco,
 where I had resided since college, embedded in the Bay Area tech
-zeitgeist. Since I was a little kid growing up in the 1990s Bill
-Gates era, I've wanted to invent cool new things, and maybe in the
-process conquer the world. Bill Gates scale global domination has yet
-to pan out, but I do feel grateful that, for me, shooting for the moon
-happened to involve learning skills that now support a comfortable
-living. Ambitious ventriloquists have no such luxury.
+zeitgeist. Since I was a little kid growing up in the 1990s Bill Gates
+era, I've wanted to invent cool new things, and maybe in the process
+conquer the world. Bill Gates scale global domination has yet to pan
+out, but I do feel grateful that, for me, shooting for the moon
+happened to involve learning skills that now support a creative and
+comparatively stable profession. Ambitious ventriloquists have no such
+luxury.
 
 Two years ago I moved from SF to NYC for a more balanced life, and I
 now work at Meta in the Farley Building near Penn Station. Working at
@@ -73,10 +74,10 @@ Work is demanding, and can be stressful. In fact (and this is super
 embarassing so please don't tell anyone) but I'll confide that not too
 long ago I had a dream (correction: nightmare) that Zuck (again, for
 legal reasons I must stress we're now talking about nightmare Mark
-Zuckerberg), while situated to my left on a picnic blanket, made a move
-on me that I did not feel empowered to refuse. I want to stress that I
-woke up immediately and well before my honor was compromised, but I
-took it as a sign to try and work a little less.
+Zuckerberg), while situated to my left on a picnic blanket, made a
+move on me that I did not feel empowered to refuse. I want to stress
+that I woke up immediately and well before my honor was compromised,
+but I took it as a sign to try and work a little less.
 
 My biggest accomplishment by far since moving to NYC has been finding
 an extremely cool group of friends. It came about in one of those
@@ -92,12 +93,12 @@ playing chess but I've never met a single one of them and am still
 trying to work out who exactly they are.
 
 I am, at heart, a small town Texan. I own a Stetson, have shot skeet,
-and a slight twang returns to my voice upon touching down in DFW. My
+and a slight twang returns to my voice upon touching down in ATX. My
 family lives near San Antonio and I have two sisters who have gifted
 me six beautiful and hilarious and disgusting niblings (a
 gender-neutral word for nieces and nephews I learned on the playa) who
-are the joy of my life and also infect me with some new virus
-every time I go home. They rule.
+are the joy of my life and also infect me with some new virus every
+time I go home. They rule.
 
 I was raised Catholic. Jesus was a very big part of my childhood until
 I ventured west at 18 and got Californicated. I don't believe all the
