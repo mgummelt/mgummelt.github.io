@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 👋
-permalink: /post/
+permalink: /hi/
 ---
 
 > "Language was invented for one reason, boys—to woo women—and, in that
