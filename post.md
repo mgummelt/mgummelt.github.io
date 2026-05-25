@@ -1,4 +1,5 @@
 ---
+layout: post
 title: My post
 permalink: /post/
 ---
