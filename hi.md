@@ -9,24 +9,23 @@ permalink: /hi/
 >
 > -- Mr. Keating, *Dead Poets Society*
 
-If a man intends to locate the love of his life, he must be willing
-and able to write, at minimum, a five paragraph essay. It demonstrates
-a baseline literacy and provides a lady something to read on the
-train.
+If a man intends to find the love of his life, he must be willing and
+able to write, at minimum, a five-paragraph essay. It demonstrates a
+baseline literacy and provides a lady something to read on the train.
 
 My name is Michael Gummelt. Six generations ago, my
 great-great-great-grandfather, Peter Gummelt, migrated from the
 Austro-Hungarian Empire, settled in Waco, TX, and across two separate
 wives fathered twenty-one children. I share this neither to scare you
-off (I would settle for somewhat fewer offspring) nor to brag about my
+off (I would settle for somewhat fewer kids) nor to brag about my
 bloodline's fertility. It is merely how I got here.
 
 I live in a Tribeca apartment at the corner of Church and Murray
 Street, right between my favorite Japanese bakery and the strip club
 across the street, which on move-in I assumed to be strategically
 located to capitalize on the bros spilling out of Monk McGinns next
-door, but have since observed approximately 100% of their clientele to
-instead be the well-tailored and client-schmoozing Wall Street types
+door, but have since observed approximately 100% of their customers to
+instead be the well-tailored, client-schmoozing Wall Street types
 trekking down from the skyscrapers a few blocks downtown.
 
 On my dresser sits a sizeable and eclectic collection of
@@ -34,9 +33,9 @@ penguins. Catecorner to the waddle (a group of penguins is called a
 "waddle"), underneath a forest green accent wall that my best friend
 painted, you'll find a proud array of houseplants, from begonias to
 birds of paradise to bonsai and others that, much to my surprise, I
-have manged for over a year now to not only keep alive but nurture
+have managed for over a year now to not only keep alive but nurture
 into a thriving little garden. I credit their health more to the ample
-south facing light than to my plant raising abilities, but my mom is a
+south-facing light than to my plant raising abilities, but my mom is a
 master gardener so it's possible I've inherited a natural green thumb.
 
 I've surprised myself at my own inclination toward nesting since
@@ -51,7 +50,7 @@ that I now get to parlay into to wall decor and feng shui.
 
 I ran that small startup for five years while living in San Francisco,
 where I had resided since college, embedded in the Bay Area tech
-zeitgeist. Since I was a little kid growing up in the 1990's Bill
+zeitgeist. Since I was a little kid growing up in the 1990s Bill
 Gates era, I've wanted to invent cool new things, and maybe in the
 process conquer the world. Bill Gates scale global domination has yet
 to pan out, but I do feel grateful that, for me, shooting for the moon
@@ -60,21 +59,21 @@ living. Ambitious ventriloquists have no such luxury.
 
 Two years ago I moved from SF to NYC for a more balanced life, and I
 now work at Meta in the Farley Building near Penn Station. Working at
-Meta feels full circle, on account of the fact that when I was in
-college I did two internships at Facebook, at a time when the company
-was small enough for Zuckerberg to invite me and my team over to his
-house for a barbecue, where we hung out in his living room, ate
-surprisingly good chicken sandwiches, and played Rock Band. Few
-believe me when I say that I witnessed the boy king score 100% on the
-vocal track on expert mode, but it wasn't so much a beautiful voice as
-the sort of robotic pitch perfect you might expect from an Exter
-educated prep school nerd.
+Meta feels full circle, on account of the fact that while in college I
+did two internships at Facebook, at a time when the company was small
+enough for Zuckerberg to invite me and my team over to his house for a
+barbecue, where we hung out in his living room, ate surprisingly good
+chicken sandwiches, and played Rock Band. Few believe me when I say
+that I witnessed the boy king score 100% on the vocal track on expert
+mode, but it wasn't so much a beautiful voice as the sort of robotic
+pitch perfect you might expect from an Exeter educated prep school
+nerd.
 
 Work is demanding, and can be stressful. In fact (and this is super
 embarassing so please don't tell anyone) but I'll confide that not too
 long ago I had a dream (correction: nightmare) that Zuck (again, for
-leagal reasons I must stress we're now talking about nightmare Mark
-Zuckerberg) while situated to my left on a picnic blanket made a move
+legal reasons I must stress we're now talking about nightmare Mark
+Zuckerberg), while situated to my left on a picnic blanket, made a move
 on me that I did not feel empowered to refuse. I want to stress that I
 woke up immediately and well before my honor was compromised, but I
 took it as a sign to try and work a little less.
@@ -98,7 +97,7 @@ family lives near San Antonio and I have two sisters who have gifted
 me six beautiful and hilarious and disgusting niblings (a
 gender-neutral word for nieces and nephews I learned on the playa) who
 are the joy of my life and also infect me with some new virus
-everytime I go home. They rule.
+every time I go home. They rule.
 
 I was raised Catholic. Jesus was a very big part of my childhood until
 I ventured west at 18 and got Californicated. I don't believe all the
@@ -120,23 +119,22 @@ important than health, though I was gifted with a metabolism that lets
 me eat a disgraceful number of Pop-Tarts. I think it's good to be fit
 and healthy and funny and smart and hot and competent and kind. It's
 good to work toward those things, and bad to stagnate. I'm sexually
-confident. I like girls who can match me with a high sex drive and who
-aren't afraid to continually reignite a relationship with new kinky
-energy.
+confident, and like girls who can match me with a high sex drive and
+who aren't afraid to continually reignite a relationship with new
+kinky energy.
 
-I want a relationship where we push each other, patiently, to try and
-be the best versions of ourselves. I enjoy being a provider, but do
-not care one way or the other about being a part of a power couple, as
-long as you're driven toward something important. I want children. I
-care a lot about being a good father and marrying a good mother,
-because mine was the best. I look forward toward focusing less on
-world dominance and more on building a family. I want to be a man, a
-guardian, and a stabilizing force. I'm attracted to feminine women,
-regardless whether they be submissive or assertive—women who are quick
-to laugh, slow to anger, exercise a discerning taste in everything
-they do, and know how to pick their battles. I want the kind of peace
-that comes from two people who view a relationship as 60/40 where
-they're both trying to be the 60.
+I want a relationship where we inspire each other to be better
+versions of ourselves, content but never satisfied. I enjoy being a
+provider, but do not care one way or the other about being a part of a
+power couple, as long as you're driven toward something important. I
+want children. I care a lot about being a good father and marrying a
+good mother, because mine was the best. I want to build both family
+and community. I want to be a man, a guardian, and a stabilizing
+force. I'm attracted to feminine women, regardless whether they be
+submissive or assertive—women who are quick to laugh, slow to anger,
+exercise a discerning taste in all they do, and know how to pick their
+battles. I want the kind of peace that comes from two people who view
+a relationship as 60/40 where they're both trying to be the 60.
 
 In case we never meet, I hope this letter has at least given you
 something to read on the train.
