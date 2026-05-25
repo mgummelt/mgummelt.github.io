@@ -1,12 +1,12 @@
 ---
 layout: post
-title: My post
+title: 👋
 permalink: /post/
 ---
 
-"Language was invented for one reason, boys—to woo women—and, in that
-endeavor, laziness will not do."
-   -- Robin Williams, Dead Poets Society
+> "Language was invented for one reason, boys—to woo women—and, in that
+> endeavor, laziness will not do."
+> -- Robin Williams, Dead Poets Society
 
 If a man intends to attract the love of one's life, he must be willing
 and able to write, at minimum, a five paragraph essay. It demonstrates
