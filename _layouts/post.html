@@ -25,6 +25,23 @@
     p {
       margin: 1.2em 0;
     }
+
+    blockquote {
+        position: relative;
+        margin: 2rem 0;
+        padding-left: 2.5rem;
+        font-style: italic;
+    }
+
+    blockquote::before {
+        content: "“";
+        position: absolute;
+        left: 0;
+        top: -0.3rem;
+        font-size: 4rem;
+        line-height: 1;
+        opacity: 0.2;
+    }
   </style>
 </head>
 <body>
